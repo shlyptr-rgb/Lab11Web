@@ -1,0 +1,14 @@
+# .htaccess untuk routing ke index.php
+
+# 1. Mengaktifkan URL Rewriting
+RewriteEngine On
+
+# 2. Base Directory (HARUS SAMA DENGAN NAMA FOLDER PROYEK)
+RewriteBase /lab11_php_oop/
+
+# 3. Pengecualian: Abaikan jika file atau folder asli ada
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# 4. Aturan Utama: Arahkan semua request ke index.php
+RewriteRule ^(.*)$ index.php [L,QSA]
